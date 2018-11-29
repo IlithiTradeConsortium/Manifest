@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   let form=document.querySelector("form")
   
    form.string.addEventListener("click", ()=>{
+   form.clear.()=>form.out.innerHTML=""  
     let out=form.out
     if(!jsonobj.length)
       return
