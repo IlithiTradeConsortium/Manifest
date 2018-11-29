@@ -48,5 +48,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
     out.appendChild(tbl)
   })
   
-   form.clear.addEventListener("click", ()=>form.out.innerHTML="")
-})
+  form.clear.addEventListener("click", ()=>form.out.innerHTML="")
+  })
