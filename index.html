@@ -6,12 +6,12 @@
 </style>
 </head>
 <body>
-    <input type="button" onclick="CreateTableFromJSON()" value="Weapons" /><input type="button" onclick="CreateTableFromJSONB()" value="#Create Table From JSON" />
+    <input type="button" onclick="CreateTableWeapon()" value="Weapons" /><input type="button" onclick="CreateTableArmor()" value="Armor" />
     <p id="showData"></p>
 </body>
 
 <script>
-    function CreateTableFromJSON() {
+    function CreateTableWeapon() {
         var weapons = [
             {
                 "Item Name": "a compact ironwood riot crossbow with a yew lath",
@@ -120,32 +120,62 @@
         divContainer.innerHTML = "";
         divContainer.appendChild(table);
     }
-    function CreateTableFromJSONB() {
-        var myBooksB = [
+    function CreateTableArmor() {
+        var armor = [
             {
-                "Item Name": "#a compact ironwood riot crossbow with a yew lath",
-                "Item Type": "#Weapon",
-                "Category": "#Heavy Crossbow",
-                "Price": "#10,000"
+                "Item Name": "a dented steel targe emblazoned with an elaborate labyrinthine pattern",
+                "Item Type": "Armor",
+                "Category": "Shield",
+                "Notes": "Duskruin incidental"
             },
             {
-                "Item Name": "#a serrated Imperial spear with an intricately carved rockwood shaft",
-                "Item Type": "#Weapon",
-                "Category": "#Pike/HT",
-                "Price": "#35,000"
+                "Item Name": "a loosely-draped grey robe of chain-lined Elothean silk",
+                "Item Type": "Armor",
+                "Category": "Chain",
+                "Notes": "Hollow's Eve Merchant"
             },
             {
-               "Item Name": "#a light tyrium throwing axe with a tempered blade",
-                "Item Type": "#Weapon",
-                "Category": "#Medium Edge/LT",
-                "Price": "#7,000"
+               "Item Name": "a stained leather cowl with a braid of rat tails affixed to the back",
+                "Item Type": "Armor",
+                "Category": "Light Armor",
+                "Notes": "Duskruin Incidental"
+            },
+            {
+               "Item Name": "some oddly assembled full battle plate covered with blighted gold symbols",
+                "Item Type": "Armor",
+                "Category": "Plate",
+                "Notes": "Incidental"
+            },
+            {
+               "Item Name": "a rusty chain balaclava lined with stained leather",
+                "Item Type": "Armor",
+                "Category": "Chain",
+                "Notes": "Duskruin Incidental"
+            },
+            {
+               "Item Name": "some black Imperial battle armor trimmed in silver and gold",
+                "Item Type": "Armor",
+                "Category": "Plate",
+                "Notes": "Taisidon Merchant"
+            },
+            {
+               "Item Name": "a scratched steel light breastplate",
+                "Item Type": "Armor",
+                "Category": "Plate",
+                "Notes": "Kanton's Incidental"
+            },
+            {
+               "Item Name": "some stained leather gloves lined in grey fur",
+                "Item Type": "Armor",
+                "Category": "Light Armor",
+                "Notes": "Duskruin Incidental"
             }
         ]
         // EXTRACT VALUE FOR HTML HEADER. 
         // ('Book ID', 'Book Name', 'Category' and 'Price')
         var col = [];
-        for (var i = 0; i < myBooksB.length; i++) {
-            for (var key in myBooksB[i]) {
+        for (var i = 0; i < armor.length; i++) {
+            for (var key in armor[i]) {
                 if (col.indexOf(key) === -1) {
                     col.push(key);
                 }
@@ -161,11 +191,11 @@
             tr.appendChild(th);
         }
         // ADD JSON DATA TO THE TABLE AS ROWS.
-        for (var i = 0; i < myBooksB.length; i++) {
+        for (var i = 0; i < armor.length; i++) {
             tr = table.insertRow(-1);
             for (var j = 0; j < col.length; j++) {
                 var tabCell = tr.insertCell(-1);
-                tabCell.innerHTML = myBooksB[i][col[j]];
+                tabCell.innerHTML = armor[i][col[j]];
             }
         }
         // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
