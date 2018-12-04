@@ -2,25 +2,21 @@
 <html>
 <head>
 <style>
-body {
-    background-color: lightblue;
-}
 
-p {
-    font-family: verdana;
-    font-size: 20px;
-}
 </style>
 </head>
 <body>
+<table>
+    <tr>
+        <th>
     <input type="button" onclick="CreateTableFromJSON()" value="Create Table From JSON" />
     <p id="showData"></p>
     <input type="button" onclick="CreateTableFromJSONB()" value="#Create Table From JSON" />
-    <p id="showData"></p>
+    <p id="showData2"></p>
     <input type="button" onclick="CreateTableFromJSONB()" value="#Create Table From JSON" />
-    <p id="showData"></p>
+    <p id="showData2"></p>
     <input type="button" onclick="CreateTableFromJSONB()" value="#Create Table From JSON" />
-    <p id="showData"></p>
+    <p id="showData2"></p>
 </body>
 
 <script>
@@ -126,7 +122,7 @@ p {
             }
         }
         // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
-        var divContainer = document.getElementById("showData");
+        var divContainer = document.getElementById("showData2");
         divContainer.innerHTML = "";
         divContainer.appendChild(table);
     }
